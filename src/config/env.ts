@@ -9,7 +9,7 @@ const envSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
   PORT: z.coerce.number().int().positive().max(65535).default(3000),
   DATABASE_URL: z.url(),
-  CORS_ORIGIN: z.url(),
+  CORS_ORIGIN: z.url({ protocol: /^https?$/ }),
 });
 
 const result = envSchema.safeParse(process.env);
