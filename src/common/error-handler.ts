@@ -1,6 +1,11 @@
 import type { ErrorRequestHandler, RequestHandler } from "express";
 import { AppError, NotFoundError } from "./app-error.js";
 
+const clientErrorMessages: Record<number, string> = {
+  413: "Request body too large",
+  415: "Unsupported content type",
+};
+
 export const notFoundHandler: RequestHandler = (_req, _res, next) => {
   next(new NotFoundError("Route"));
 };
@@ -18,7 +23,8 @@ export const errorHandler: ErrorRequestHandler = (err, _req, res, next) => {
 
   const clientStatus = getClientErrorStatus(err);
   if (clientStatus !== undefined) {
-    res.status(clientStatus).json({ error: { message: "Invalid request" } });
+    const message = clientErrorMessages[clientStatus] ?? "Invalid request";
+    res.status(clientStatus).json({ error: { message } });
     return;
   }
 

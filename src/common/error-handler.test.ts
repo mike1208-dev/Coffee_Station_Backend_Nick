@@ -70,4 +70,25 @@ describe("error handling", () => {
     expect(res.status).toBe(400);
     expect(res.body).toEqual({ error: { message: "Invalid request" } });
   });
+
+  it("returns 413 when the body is too large", async () => {
+    const res = await request(app)
+      .post("/health")
+      .send({ data: "x".repeat(200_000) });
+
+    expect(res.status).toBe(413);
+    expect(res.body).toEqual({ error: { message: "Request body too large" } });
+  });
+
+  it("returns 415 for an unsupported charset", async () => {
+    const res = await request(app)
+      .post("/health")
+      .set("Content-Type", "application/json; charset=iso-8859-1")
+      .send("{}");
+
+    expect(res.status).toBe(415);
+    expect(res.body).toEqual({
+      error: { message: "Unsupported content type" },
+    });
+  });
 });
