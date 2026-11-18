@@ -29,3 +29,6 @@ coverage/
 Thumbs.db
 coffee_station_backend_project_plan_11_12.md
 coffee_station_backend_project_plan_summary_11_12.md
+
+# Generated Prisma client
+src/generated/
