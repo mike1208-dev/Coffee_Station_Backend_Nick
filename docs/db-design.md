@@ -57,6 +57,7 @@
 
 - Max guests per single booking: 10.
 - Capacity: the cafe can serve 40 people at once (the cafe's actual seating capacity). A new booking is accepted only if the sum of guestCount for existing bookings at that date+time, plus the new booking, does not exceed 40.
+- Two bookings can share the same date and time, as long as the total stays at 40 or less.
 
 ## Money storage
 
