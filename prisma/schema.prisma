@@ -6,3 +6,21 @@ generator client {
 datasource db {
   provider = "postgresql"
 }
+
+enum Category {
+  Coffee
+  Tea
+  Desserts
+  Breakfast
+  Combos
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  name        String
+  category    Category
+  description String
+  price       Decimal
+  imageUrl    String
+  rating      Float
+}
