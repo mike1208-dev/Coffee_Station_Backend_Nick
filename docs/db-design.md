@@ -42,9 +42,12 @@
 |---|---|---|
 | id | String (cuid) | yes |
 | name | String | yes |
+| phone | String | yes |
 | date | DateTime (date part) | yes |
 | time | Enum: "09:00", "13:00", "18:00" | yes |
 | guestCount | Int | yes |
+| note | String | no |
+| createdAt | DateTime | yes |
 
 **Booking rules:**
 - Capacity: the cafe can serve 40 people at once. A new booking is accepted only if `(sum of guestCount for all existing bookings at that date+time) + (new booking's guestCount) <= 40`. If it would exceed 40, reject the booking.
