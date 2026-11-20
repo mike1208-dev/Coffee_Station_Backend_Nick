@@ -14,7 +14,11 @@
 ## Order
 | Field | Type | Required |
 |---|---|---|
-| id | String (cuid) | yes |
+| id | String (UUID) | yes |
+| orderNumber | String | yes |
+| customerName | String | yes |
+| phone | String | yes |
+| note | String | no |
 | status | Enum: Pending, Confirmed, Completed, Cancelled | yes |
 | totalPrice | Decimal | yes |
 | createdAt | DateTime | yes |
