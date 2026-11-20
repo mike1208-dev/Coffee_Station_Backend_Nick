@@ -50,8 +50,8 @@
 | createdAt | DateTime | yes |
 
 **Booking rules:**
-- Capacity: the cafe can serve 40 people at once. A new booking is accepted only if `(sum of guestCount for all existing bookings at that date+time) + (new booking's guestCount) <= 40`. If it would exceed 40, reject the booking.
-- Two bookings CAN share the same date+time slot, as long as the 40-person total isn't exceeded.
+- Max guests per single booking: 10.
+- Capacity: the cafe can serve 40 people at once (the cafe's actual seating capacity). A new booking is accepted only if the sum of guestCount for existing bookings at that date+time, plus the new booking, does not exceed 40.
 
 ## Money storage
 `Decimal` (Prisma's `Decimal` type), for both Product.price and Order/OrderItem amounts. Why: issue #8 already requires `Decimal` for Product, so using the same type everywhere avoids rounding mismatches between a product's price and an order's stored total — floats lose precision for money, and switching types mid-pipeline (Decimal here, cents-as-int there) adds conversion bugs for no benefit.
