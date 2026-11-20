@@ -21,7 +21,9 @@ describe("GET /api/products", () => {
   });
 
   it("returns 400 for an invalid category", async () => {
-    const res = await request(app).get("/api/products?category=NotARealCategory");
+    const res = await request(app).get(
+      "/api/products?category=NotARealCategory",
+    );
 
     expect(res.status).toBe(400);
   });
