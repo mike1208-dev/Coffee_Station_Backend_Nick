@@ -168,6 +168,10 @@ const products = [
 ];
 
 async function main() {
+  if ((await prisma.product.count()) > 0) {
+    console.log("Products already seeded, nothing to do.");
+    return;
+  }
   await prisma.product.createMany({ data: products });
 }
 
