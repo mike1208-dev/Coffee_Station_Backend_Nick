@@ -16,5 +16,10 @@ export async function getProducts(req: Request, res: Response) {
   }
 
   const products = await listProducts(category as Category | undefined);
-  res.json(products);
+  res.json(
+    products.map((product) => ({
+      ...product,
+      price: product.price.toNumber(),
+    })),
+  );
 }
