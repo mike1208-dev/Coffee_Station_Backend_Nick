@@ -2,8 +2,10 @@
 import { existsSync } from "node:fs";
 import { defineConfig, env } from "prisma/config";
 
-if (existsSync(".env")) {
-  process.loadEnvFile();
+const envFile = process.env.NODE_ENV === "test" ? ".env.test" : ".env";
+
+if (existsSync(envFile)) {
+  process.loadEnvFile(envFile);
 }
 
 export default defineConfig({
