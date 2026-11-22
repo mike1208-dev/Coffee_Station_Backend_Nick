@@ -1,8 +1,10 @@
 import { existsSync } from "node:fs";
 import { z } from "zod";
 
-if (existsSync(".env")) {
-  process.loadEnvFile();
+const envFile = process.env.NODE_ENV === "test" ? ".env.test" : ".env";
+
+if (existsSync(envFile)) {
+  process.loadEnvFile(envFile);
 }
 
 const envSchema = z.object({
