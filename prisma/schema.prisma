@@ -65,12 +65,12 @@ enum BookingTime {
 }
 
 model Booking {
-  id          String      @id @default(cuid())
-  name        String
-  phone       String
-  date        DateTime    @db.Date
-  time        BookingTime
-  guestCount  Int
-  note        String?
-  createdAt   DateTime    @default(now())
+  id         String      @id @default(cuid())
+  name       String
+  phone      String
+  date       DateTime    @db.Date
+  time       BookingTime
+  guestCount Int
+  note       String?
+  createdAt  DateTime    @default(now())
 }
