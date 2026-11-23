@@ -1,5 +1,6 @@
 import { BadRequestError } from "../../common/app-error.js";
 import { prisma } from "../../config/prisma.js";
+import { randomUUID } from "node:crypto";
 
 interface CreateOrderInput {
   customerName: string;
@@ -33,7 +34,7 @@ export async function createOrder(input: CreateOrderInput) {
 
   return prisma.order.create({
     data: {
-      orderNumber: `ORD-${Date.now()}`,
+      orderNumber: `ORD-${randomUUID().slice(0, 8).toUpperCase()}`,
       customerName: input.customerName,
       phone: input.phone,
       totalPrice,
