@@ -61,3 +61,15 @@ describe("Order model", () => {
     );
   });
 });
+
+describe("Product in an order", () => {
+  it("cannot be deleted", async () => {
+    const order = await createOrder();
+    const productId = order.items[0].productId;
+
+    await expect(
+      prisma.product.delete({ where: { id: productId } }),
+    ).rejects.toMatchObject({ code: "P2003" });
+    expect(await prisma.product.count({ where: { id: productId } })).toBe(1);
+  });
+});
