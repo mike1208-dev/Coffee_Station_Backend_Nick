@@ -8,7 +8,7 @@ const products = [
     category: Category.Coffee,
     description: "Rich espresso with steamed milk and a light layer of foam.",
     price: 4.5,
-    imageUrl: "coffee (1).avif",
+    imageUrl: "/images/coffee-1.avif",
     rating: 4.8,
   },
   {
@@ -16,7 +16,7 @@ const products = [
     category: Category.Coffee,
     description: "Espresso with vanilla syrup, milk, and caramel drizzle.",
     price: 5.2,
-    imageUrl: "coffee (2).avif",
+    imageUrl: "/images/coffee-2.avif",
     rating: 4.9,
   },
   {
@@ -24,7 +24,7 @@ const products = [
     category: Category.Coffee,
     description: "Bold espresso over ice and water, perfect for hot days.",
     price: 3.5,
-    imageUrl: "coffee (3).avif",
+    imageUrl: "/images/coffee-3.avif",
     rating: 4.6,
   },
   {
@@ -32,7 +32,7 @@ const products = [
     category: Category.Coffee,
     description: "Equal parts espresso, steamed milk, and milk foam.",
     price: 4.0,
-    imageUrl: "coffee (4).avif",
+    imageUrl: "/images/coffee-4.avif",
     rating: 4.7,
   },
   {
@@ -40,7 +40,7 @@ const products = [
     category: Category.Coffee,
     description: "Espresso with chocolate syrup and steamed milk.",
     price: 5.0,
-    imageUrl: "coffee (5).avif",
+    imageUrl: "/images/coffee-5.avif",
     rating: 4.8,
   },
 
@@ -50,7 +50,7 @@ const products = [
     category: Category.Tea,
     description: "Premium Japanese matcha whisked with steamed milk.",
     price: 5.5,
-    imageUrl: "tea (1).avif",
+    imageUrl: "/images/tea-1.avif",
     rating: 4.9,
   },
   {
@@ -58,7 +58,7 @@ const products = [
     category: Category.Tea,
     description: "Fragrant black tea with bergamot oil and blue cornflowers.",
     price: 4.0,
-    imageUrl: "tea (2).avif",
+    imageUrl: "/images/tea-2.avif",
     rating: 4.7,
   },
   {
@@ -66,7 +66,7 @@ const products = [
     category: Category.Tea,
     description: "Spiced black tea concentrate mixed with steamed milk.",
     price: 4.8,
-    imageUrl: "tea (3).avif",
+    imageUrl: "/images/tea-3.avif",
     rating: 4.9,
   },
   {
@@ -75,7 +75,7 @@ const products = [
     description:
       "Refreshing black tea infused with peach flavor and served over ice.",
     price: 4.2,
-    imageUrl: "tea (4).avif",
+    imageUrl: "/images/tea-4.avif",
     rating: 4.6,
   },
 
@@ -85,7 +85,7 @@ const products = [
     category: Category.Desserts,
     description: "Buttery croissant filled with fresh berries and cream.",
     price: 3.8,
-    imageUrl: "desserts (1).avif",
+    imageUrl: "/images/desserts-1.avif",
     rating: 4.9,
   },
   {
@@ -93,7 +93,7 @@ const products = [
     category: Category.Desserts,
     description: "Decadent chocolate cake with a molten center.",
     price: 6.5,
-    imageUrl: "desserts (2).avif",
+    imageUrl: "/images/desserts-2.avif",
     rating: 4.8,
   },
   {
@@ -101,7 +101,7 @@ const products = [
     category: Category.Desserts,
     description: "Creamy vanilla cheesecake with a graham cracker crust.",
     price: 5.5,
-    imageUrl: "desserts (3).avif",
+    imageUrl: "/images/desserts-3.avif",
     rating: 4.9,
   },
   {
@@ -109,7 +109,7 @@ const products = [
     category: Category.Desserts,
     description: "Assorted french macarons with various fillings.",
     price: 6.0,
-    imageUrl: "desserts (4).avif",
+    imageUrl: "/images/desserts-4.avif",
     rating: 4.7,
   },
 
@@ -120,7 +120,7 @@ const products = [
     description:
       "Sourdough bread topped with fresh avocado, radish, and seeds.",
     price: 8.5,
-    imageUrl: "breakfast (1).avif",
+    imageUrl: "/images/breakfast-1.avif",
     rating: 4.7,
   },
   {
@@ -128,7 +128,7 @@ const products = [
     category: Category.Breakfast,
     description: "Fluffy pancakes served with maple syrup and butter.",
     price: 7.0,
-    imageUrl: "breakfast (2).avif",
+    imageUrl: "/images/breakfast-2.avif",
     rating: 4.6,
   },
   {
@@ -136,7 +136,7 @@ const products = [
     category: Category.Breakfast,
     description: "Toasted bagel with a generous spread of cream cheese.",
     price: 3.5,
-    imageUrl: "breakfast (3).avif",
+    imageUrl: "/images/breakfast-3.avif",
     rating: 4.5,
   },
   {
@@ -144,7 +144,7 @@ const products = [
     category: Category.Breakfast,
     description: "Greek yogurt topped with homemade granola and fresh fruits.",
     price: 6.0,
-    imageUrl: "breakfast (4).avif",
+    imageUrl: "/images/breakfast-4.avif",
     rating: 4.8,
   },
 
@@ -154,7 +154,7 @@ const products = [
     category: Category.Combos,
     description: "Coffee + Croissant combo to start your day right.",
     price: 7.5,
-    imageUrl: "combos (1).avif",
+    imageUrl: "/images/combos-1.avif",
     rating: 4.9,
   },
   {
@@ -162,7 +162,7 @@ const products = [
     category: Category.Combos,
     description: "Sandwich + Iced Tea combo for a refreshing midday meal.",
     price: 12.0,
-    imageUrl: "combos (2).avif",
+    imageUrl: "/images/combos-2.avif",
     rating: 4.8,
   },
 ];
