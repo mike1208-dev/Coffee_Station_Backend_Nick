@@ -53,4 +53,14 @@ describe("validate", () => {
     expect(res.status).toBe(200);
     expect(res.body).toEqual({ limit: 5 });
   });
+
+  it("names the nested field of an invalid item", () => {
+    const schema = z.strictObject({
+      items: z.array(z.strictObject({ quantity: z.number().int().positive() })),
+    });
+
+    expect(() => validate(schema, { items: [{ quantity: 0 }] })).toThrow(
+      "items.0.quantity",
+    );
+  });
 });
