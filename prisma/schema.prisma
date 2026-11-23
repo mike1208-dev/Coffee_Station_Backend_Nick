@@ -16,11 +16,44 @@ enum Category {
 }
 
 model Product {
-  id          String   @id @default(cuid())
+  id          String      @id @default(cuid())
   name        String
   category    Category
   description String
   price       Decimal
   imageUrl    String
   rating      Float
+  orderItems  OrderItem[]
+}
+
+enum OrderStatus {
+  Pending
+  Confirmed
+  Completed
+  Cancelled
+}
+
+model Order {
+  id           String      @id @default(uuid())
+  orderNumber  String      @unique
+  customerName String
+  phone        String
+  note         String?
+  status       OrderStatus @default(Pending)
+  totalPrice   Decimal
+  createdAt    DateTime    @default(now())
+  items        OrderItem[]
+}
+
+model OrderItem {
+  id          String  @id @default(cuid())
+  orderId     String
+  order       Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId   String
+  product     Product @relation(fields: [productId], references: [id])
+  productName String
+  unitPrice   Decimal
+  quantity    Int
+
+  @@index([orderId])
 }
