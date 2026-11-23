@@ -42,16 +42,16 @@
 
 ## Booking
 
-| Field      | Type                            | Required |
-| ---------- | ------------------------------- | -------- |
-| id         | String (cuid)                   | yes      |
-| name       | String                          | yes      |
-| phone      | String                          | yes      |
-| date       | DateTime (date part)            | yes      |
-| time       | Enum: "09:00", "13:00", "18:00" | yes      |
-| guestCount | Int                             | yes      |
-| note       | String                          | no       |
-| createdAt  | DateTime                        | yes      |
+| Field      | Type                                                            | Required |
+| ---------- | --------------------------------------------------------------- | -------- |
+| id         | String (cuid)                                                   | yes      |
+| name       | String                                                          | yes      |
+| phone      | String                                                          | yes      |
+| date       | DateTime (date part)                                            | yes      |
+| time       | Enum: Morning = "09:00", Afternoon = "13:00", Evening = "18:00" | yes      |
+| guestCount | Int                                                             | yes      |
+| note       | String                                                          | no       |
+| createdAt  | DateTime                                                        | yes      |
 
 **Booking rules:**
 
