@@ -57,3 +57,20 @@ model OrderItem {
 
   @@index([orderId])
 }
+
+enum BookingTime {
+  Morning   @map("09:00")
+  Afternoon @map("13:00")
+  Evening   @map("18:00")
+}
+
+model Booking {
+  id          String      @id @default(cuid())
+  name        String
+  phone       String
+  date        DateTime    @db.Date
+  time        BookingTime
+  guestCount  Int
+  note        String?
+  createdAt   DateTime    @default(now())
+}
