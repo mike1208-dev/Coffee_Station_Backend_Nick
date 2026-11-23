@@ -4,7 +4,9 @@ import { errorHandler, notFoundHandler } from "./common/error-handler.js";
 import { router } from "./routes/index.js";
 
 // Resolved from this file, not the cwd, so it works from both src/ (dev) and dist/ (build).
-const imagesDir = fileURLToPath(new URL("../public/assets/images", import.meta.url));
+const imagesDir = fileURLToPath(
+  new URL("../public/assets/images", import.meta.url),
+);
 
 export const app = express();
 
